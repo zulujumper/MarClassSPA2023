@@ -28,7 +28,10 @@ function afterRender(state) {
 
 router.hooks({
   before: (done, params) => {
-    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
       case "Pizza":
@@ -37,20 +40,24 @@ router.hooks({
           .get(`https://sc-pizza-api.onrender.com/pizzas`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            console("response", response);
+            console.log("response", response);
+            store.Pizza.pizzas = response.data;
             done();
           })
-          .catch((error) => {
+          .catch(error => {
             console.log("It puked", error);
             done();
           });
-          break;
-      default :
+        break;
+      default:
         done();
     }
   },
-  already: (params) => {
-    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
+  already: params => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
 
     render(store[view]);
   }
