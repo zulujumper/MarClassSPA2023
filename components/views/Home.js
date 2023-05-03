@@ -10,5 +10,4 @@ export default state => html`
     Temperature is ${state.weather.temp}F, and it feels like
     ${state.weather.feelsLike}F.
   </h3>
-  <p>${state.message}</p>
 `;
