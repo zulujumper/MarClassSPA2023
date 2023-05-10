@@ -3,6 +3,7 @@ const express = require("express");
 // Initialize the Express application
 const app = express();
 const dotenv = require("dotenv");
+const mongoose = require('mongoose')
 
 dotenv.config();
 
