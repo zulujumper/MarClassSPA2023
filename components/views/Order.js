@@ -78,11 +78,11 @@ export default () => html`
       <label for="top5">Red Pepper</label>
     </div>
     <input
-        type="hidden"
-        name="customer"
-        id="customer"
-        value="<Your Name>"
-      />
+      type="hidden"
+      name="customer"
+      id="customer"
+      value="A Valid Customer Name"
+    />
     <input type="submit" name="submit" value="Submit Pizza" />
   </form>
 `;
